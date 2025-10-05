@@ -217,9 +217,14 @@ export function useWallet() {
     };
   }, [session, clearSession]);
 
-  const disconnectWallet = () => {
+  const disconnectWallet = useCallback(() => {
     disconnect();
-  };
+    setConnected(false);
+    setData(null);
+    if (session) {
+      clearSession();
+    }
+  }, [session, clearSession]);
 
   return {
     data,
