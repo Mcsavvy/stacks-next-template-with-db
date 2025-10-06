@@ -19,14 +19,14 @@ export async function POST(request: NextRequest) {
     const timestamp = new Date().toISOString();
     const domain = request.headers.get("origin") || "localhost:3000";
     
-    const message = `Sign this message to authenticate with PoolMind
+    const message = `Sign this message to authenticate with Stacks dApp
 
 Domain: ${domain}
 Wallet Address: ${walletAddress}
 Timestamp: ${timestamp}
 Nonce: ${nonce}
 
-By signing this message, you confirm that you are the owner of this wallet address and agree to authenticate with PoolMind.`;
+By signing this message, you confirm that you are the owner of this wallet address and agree to authenticate with Stacks dApp.`;
 
     const response: NonceResponse = {
       nonce,
