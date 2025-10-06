@@ -1,5 +1,6 @@
 "use client";
 
+import { request } from "@stacks/connect";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,8 +11,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useWallet } from "@/hooks/wallet";
+import { useAuthSession } from "@/providers/auth-session-provider";
 
 export function WalletConnection() {
+  const { session } = useAuthSession();
   const {
     data,
     isConnected,
@@ -47,9 +50,10 @@ export function WalletConnection() {
       // Generate auth message
       const message = await generateAuthMessage(data.address);
 
-      // In a real implementation, you would sign the message with the wallet
-      // For now, we'll simulate a signature
-      const signature = `simulated_signature_${Date.now()}`;
+      // Sign the message with the user's wallet
+      const { signature } = await request("stx_signMessage", {
+        message,
+      });
 
       await loginWithWallet({
         walletAddress: data.address,
@@ -105,6 +109,18 @@ export function WalletConnection() {
           ) : (
             <div className="space-y-4">
               <div className="p-4 bg-green-50 border border-green-200 rounded-md">
+                {
+                  session?.user && (
+                    <>
+                      <p className="text-sm font-medium text-green-800">
+                        User Logged In
+                      </p>
+                      <p className="text-xs text-green-600 mt-1 break-all mb-4">
+                        User ID: {session.user.id}
+                      </p>
+                    </>
+                  )
+                }
                 <p className="text-sm font-medium text-green-800">
                   Wallet Connected
                 </p>
@@ -119,21 +135,35 @@ export function WalletConnection() {
               </div>
 
               <div className="flex gap-2">
-                <Button
-                  onClick={handleLogin}
-                  disabled={isLoggingIn}
-                  className="flex-1"
-                >
-                  {isLoggingIn ? "Logging in..." : "Login"}
-                </Button>
+                {
+                  session ? (
+                    <Button
+                      onClick={handleDisconnect}
+                      variant="outline"
+                      className="flex-1"
+                    >
+                      Logout
+                    </Button>
+                  ) : (
+                    <>
+                      <Button
+                        onClick={handleLogin}
+                        disabled={isLoggingIn}
+                        className="flex-1"
+                      >
+                        {isLoggingIn ? "Logging in..." : "Login"}
+                      </Button>
 
-                <Button
-                  onClick={handleDisconnect}
-                  variant="outline"
-                  className="flex-1"
-                >
-                  Disconnect
-                </Button>
+                      <Button
+                        onClick={handleDisconnect}
+                        variant="outline"
+                        className="flex-1"
+                      >
+                        Disconnect
+                      </Button>
+                    </>
+                  )
+                }
               </div>
             </div>
           )}

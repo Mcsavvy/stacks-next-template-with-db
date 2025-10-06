@@ -115,11 +115,11 @@ export function useAuthSession() {
     );
   }
   useEffect(() => {
-    if (typeof window !== "undefined" && Object.hasOwn(window, "pmSession")) {
-      // @ts-expect-error - window.pmSession is not typed
-      delete window.pmSession;
+    if (typeof window !== "undefined" && Object.hasOwn(window, STORAGE_KEY)) {
+      // @ts-expect-error - window[STORAGE_KEY] is not typed
+      delete window[STORAGE_KEY]
     }
-    Object.defineProperty(window, "pmSession", {
+    Object.defineProperty(window, STORAGE_KEY, {
       get: () => context.session,
       set: (value) => context.setSession(value),
       enumerable: true,

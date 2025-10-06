@@ -138,14 +138,6 @@ export function useWallet() {
     [client, setSession],
   );
 
-  const generateNonce = useCallback(
-    async (data: NonceRequest) => {
-      const response = await _generateNonce(client, data);
-      return response;
-    },
-    [client],
-  );
-
   const generateAuthMessage = useCallback(
     async (walletAddress: string) => {
       const response = await _generateAuthMessage(
@@ -232,7 +224,6 @@ export function useWallet() {
     connect: connectWallet,
     disconnect: disconnectWallet,
     loginWithWallet,
-    generateNonce,
     generateAuthMessage,
     refreshCurrentUser,
   };
