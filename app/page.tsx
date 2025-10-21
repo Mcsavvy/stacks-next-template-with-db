@@ -1,5 +1,7 @@
-import { WalletConnection } from "@/components/wallet-connection";
-
 export default function Home() {
-  return <WalletConnection />;
+  return (
+    <div>
+      {/* Main  Content Here */}
+    </div>
+  )
 }

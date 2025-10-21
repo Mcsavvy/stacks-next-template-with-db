@@ -20,7 +20,6 @@ globs: *.ts,*.tsx
 - Use "use client" directive for client-side components
 - Implement proper loading and error states
 - Use the existing UI components from [components/ui/](mdc:components/ui/)
-- Follow the patterns in [components/wallet-connection.tsx](mdc:components/wallet-connection.tsx)
 
 ## Hook Patterns
 - Custom hooks should be in the [hooks/](mdc:hooks/) directory

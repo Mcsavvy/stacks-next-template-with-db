@@ -23,7 +23,6 @@ A production-ready Next.js template for building Stacks blockchain applications 
 │   └── page.tsx           # Main wallet connection page
 ├── components/            # React components
 │   ├── ui/               # Reusable UI components
-│   └── wallet-connection.tsx
 ├── hooks/                # Custom React hooks
 │   ├── wallet.ts         # Wallet connection and auth
 │   └── api-client.ts     # API client with auth
@@ -174,7 +173,6 @@ The template includes Clarinet configuration for Stacks smart contract developme
 
 ### Component Development
 - Use existing UI components from `components/ui/`
-- Follow the patterns in `components/wallet-connection.tsx`
 - Implement proper loading and error states
 - Use TypeScript for all props and state
 

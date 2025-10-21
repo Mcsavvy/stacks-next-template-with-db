@@ -6,7 +6,6 @@ globs: components/**/*.tsx,app/**/*.tsx
 
 ## Component Structure
 - Use the existing UI components from [components/ui/](mdc:components/ui/)
-- Follow the patterns established in [components/wallet-connection.tsx](mdc:components/wallet-connection.tsx)
 - Use proper TypeScript props interfaces
 - Implement proper loading and error states
 
