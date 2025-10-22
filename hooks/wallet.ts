@@ -39,7 +39,7 @@ async function _getCurrentUser(
 
 async function _connectWallet(connected: boolean) {
   if (!connected) {
-    const response = await connect();
+    const response = await connect({ network: config.stacksNetwork });
     const account = response.addresses.find(
       (address) => address.symbol === "STX",
     );
