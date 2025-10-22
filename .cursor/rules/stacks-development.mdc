@@ -16,12 +16,6 @@ description: Guidelines for Stacks blockchain development
 - Always verify signatures before creating sessions
 - Use [lib/auth/jwt.ts](mdc:lib/auth/jwt.ts) for token operations
 
-## Smart Contracts
-- Contracts are located in [contracts/](mdc:contracts/) directory
-- Use Clarinet for contract development and testing
-- Follow Stacks naming conventions for contract functions
-- Always include proper error handling in contract functions
-
 ## Database
 - Use Prisma with MongoDB for data persistence
 - User model in [prisma/schema.prisma](mdc:prisma/schema.prisma) includes wallet address and connection history

@@ -3,12 +3,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "check contracts",
-      "group": "test",
-      "type": "shell",
-      "command": "clarinet check"
-    },
-    {
       "type": "npm",
       "script": "test",
       "group": "test",

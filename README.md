@@ -9,7 +9,6 @@ A production-ready Next.js template for building Stacks blockchain applications 
 - **📱 Modern UI**: Beautiful, responsive interface with Tailwind CSS and Radix UI
 - **🗄️ Database Ready**: MongoDB integration with Prisma ORM
 - **📝 Type Safety**: Full TypeScript support with proper type definitions
-- **🛠️ Smart Contracts**: Clarinet integration for Stacks smart contract development
 - **🎨 Component Library**: Pre-built UI components following design system patterns
 - **📊 API Routes**: RESTful API endpoints for authentication and user management
 - **🔧 Developer Experience**: Biome for linting/formatting, hot reload, and more
@@ -154,14 +153,6 @@ model User {
 }
 ```
 
-## 🔗 Smart Contract Integration
-
-The template includes Clarinet configuration for Stacks smart contract development:
-
-- **Clarinet.toml**: Project configuration
-- **contracts/**: Smart contract source files
-- **tests/**: Contract test files
-- **settings/**: Network-specific settings (Devnet, Testnet, Mainnet)
 
 ## 🛠️ Development Guidelines
 

@@ -12,7 +12,6 @@ This is a Next.js template for Stacks blockchain applications with the following
 - `hooks/` - Custom React hooks including [wallet.ts](mdc:hooks/wallet.ts) and [api-client.ts](mdc:hooks/api-client.ts)
 - `lib/` - Utility libraries including auth, database, and configuration
 - `providers/` - React context providers like [auth-session-provider.tsx](mdc:providers/auth-session-provider.tsx)
-- `contracts/` - Stacks smart contracts with Clarinet configuration
 - `prisma/` - Database schema and migrations
 
 ## Key Files
