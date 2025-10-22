@@ -1,5 +1,5 @@
 {
-  "name": "stacks-next-template",
+  "name": "stacks-next-template-with-db",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -25,7 +25,6 @@
     "jose": "^5.2.0",
     "lucide-react": "^0.544.0",
     "next": "15.5.4",
-    "next-auth": "^4.24.11",
     "prisma": "^6.16.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
