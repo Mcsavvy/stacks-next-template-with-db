@@ -13,9 +13,9 @@ export type AppConfig = {
 };
 
 export const unparsedEnv = {
-  apiUrl: process.env.NEXT_PUBLIC_API_URL,
-  appName: process.env.NEXT_PUBLIC_APP_NAME,
-  stacksNetwork: process.env.NEXT_PUBLIC_STACKS_NETWORK,
+  NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
+  NEXT_PUBLIC_STACKS_NETWORK: process.env.NEXT_PUBLIC_STACKS_NETWORK,
 };
 
 const parsed = envSchema.safeParse(unparsedEnv);
